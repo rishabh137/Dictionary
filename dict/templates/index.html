@@ -4,20 +4,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-      .wrap {
+      .container {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 3rem;
       }
+      
+      .container input {
+        border: none;
+        padding: 10px 8px;
+        font-size: 18px;
+        width: 500px;
+        outline: none;
+      }
+      
+      .container .form-control {
+        border: 1.3px solid black;
+      }
+      
+      .container .searchBtn {
+        border: none;
+        background: none;
+        font-size: 17px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <div class="wrap">
+    <div class="container">
       <div class="search">
-        <form action="word">
-          <input type="text" name="search" class="searchTerm" placeholder="Input Your Word Here" />
-          <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+        <form action="word" class="form-control">
+          <input type="text" name="search" class="search" placeholder="Search" />
+          <button type="submit" class="searchBtn"><i class="fa fa-search"></i></button>
         </form>
       </div>
     </div>

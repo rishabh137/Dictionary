@@ -7,4 +7,5 @@ def index(request):
 
 
 def search(request):
+    search = request.GET.get("search")
     return render(request, "search.html")
