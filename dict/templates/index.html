@@ -8,7 +8,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         margin-top: 3rem;
+      }
+      
+      .container .heading {
+        font-weight: 500;
+        font-size: 3rem;
       }
       
       .container input {
@@ -33,6 +39,7 @@
   </head>
   <body>
     <div class="container">
+      <h1 class="heading">Dictionary</h1>
       <div class="search">
         <form action="search" class="form-control">
           <input type="text" name="search" class="search" placeholder="Search" />
