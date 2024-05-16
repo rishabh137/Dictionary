@@ -16,6 +16,7 @@ def search(request):
     res2 = requests.get(
         "https://www.thesaurus.com/browse/" + search
     )  # for antonym and synonym
+    res3 = requests.get("https://www.antonym.com/antonyms/" + search)
 
     if res:
         soup = bs4.BeautifulSoup(res.text, "html.parser")
@@ -29,7 +30,6 @@ def search(request):
     if res2:
         soup2 = bs4.BeautifulSoup(res2.text, "html.parser")
 
-        # synonyms = soup2.find_all("a", {"class": "css-r5sw71-ItemAnchor etbu2a31"})
         synonyms = soup2.select(".fltPJVdHfRCxJJVuGX8J a")
         ss = []
         for b in synonyms[0:]:
@@ -39,8 +39,20 @@ def search(request):
     else:
         se = ""
 
+    if res3:
+        soup2 = bs4.BeautifulSoup(res3.text, "html.parser")
+
+        antonyms = soup2.select(".section-list > .chip a")
+        aa = []
+        for a in antonyms[0:]:
+            re = a.text.strip()
+            aa.append(re)
+        ae = aa
+    else:
+        ae = ""
+
     results = {
         "search": search,
         "meaning": meaning1,
     }
-    return render(request, "search.html", {"se": se, "results": results})
+    return render(request, "search.html", {"se": se, "ae": ae, "results": results})
