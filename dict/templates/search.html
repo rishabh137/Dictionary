@@ -52,6 +52,11 @@
         font-size: 17px;
         cursor: pointer;
       }
+      
+      .word {
+        font-size: 3.5rem;
+        font-weight: 500;
+      }
     </style>
   </head>
   <body>
@@ -63,22 +68,16 @@
           <button type="submit" class="searchBtn"><i class="fa fa-search"></i></button>
         </form>
       </div>
-      <h1>{{ search }}</h1>
-      {% comment %} <div>
-        <h3 class="meaning"><span>Meaning</span>: {{ meaning }}</h3>
+      <h1 class="word">{{ results.search }}</h1>
+      <div>
+        <h3 class="meaning"><span>Meaning</span>: {{ results.meaning }}</h3>
 
         <h3 class="synonym">
-          <span>Synonym</span>:{% for synonym in synonyms %}
-            {{ synonym }}
+          <span>Synonym</span>:{% for s in se %}
+            {{ s }},
           {% endfor %}
         </h3>
-
-        <h3 class="antonym">
-          <span>Antonym</span>:{% for antonym in antonyms %}
-            {{ antonym }}
-          {% endfor %}
-        </h3>
-      </div> {% endcomment %}
+      </div>
     </div>
   </body>
 </html>
