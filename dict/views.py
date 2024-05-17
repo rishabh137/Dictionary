@@ -32,7 +32,7 @@ def search(request):
 
         synonyms = soup2.select(".fltPJVdHfRCxJJVuGX8J a")
         ss = []
-        for b in synonyms[0:]:
+        for b in synonyms[0:5]:
             re = b.text.strip()
             ss.append(re)
         se = ss
@@ -44,7 +44,7 @@ def search(request):
 
         antonyms = soup2.select(".section-list > .chip a")
         aa = []
-        for a in antonyms[0:]:
+        for a in antonyms[0:5]:
             re = a.text.strip()
             aa.append(re)
         ae = aa
